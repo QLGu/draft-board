@@ -1,11 +1,21 @@
 body {
   font-family: 'proxima-nova', sans-serif;
+  padding-top: 100px;
+}
+
+h2 {
+  font-weight: 700;
+  margin: 20px 10px;
+  text-transform: uppercase;
 }
 
 .queue {
   overflow: scroll;
+  position: fixed;
+  top: 0;
   white-space: nowrap;
   width: 100%;
+  z-index: 1;
 }
 
 .queue .round {
@@ -43,4 +53,10 @@ body {
   line-height: 1;
   text-transform: uppercase;
   -webkit-transform: rotate(270deg);
+}
+
+.available-players .rank {
+  color: #999;
+  text-align: center;
+  width: 1%;
 }

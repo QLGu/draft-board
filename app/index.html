@@ -29,7 +29,31 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-xs-8">
+            <h2>Available Players</h2>
+            <ul class="nav nav-tabs">
+              <li ng-repeat="position in positions"><a href="#" ng-click="filterPosition(position)">{{ position }}</a></li>
+            </ul>
+            <table class="table available-players">
+              <tr ng-repeat="player in players">
+                <td class="rank">{{ player.pos_rank }}</td>
+                <td class="pos">{{ player.pos }}</td>
+                <td class="name">{{ player.name }}</td>
+                <td class="school">{{ player.school }}</td>
+                <td><button class="btn btn-success btn-xs">Draft</button>
+              </tr>
+            </table>
+          </div>
+          <div class="col-xs-4">
+            <h2>Draft Summary</h2>
+          </div>
+        </div>
       </div>
+
+      <script type="text/javascript" src="//use.typekit.net/jkw0vhm.js"></script>
+      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
       <!-- build:js scripts/vendor.js -->
       <!-- bower:js -->

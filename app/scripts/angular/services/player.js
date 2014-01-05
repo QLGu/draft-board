@@ -1,23 +1,14 @@
 angular.module('app.services').factory('Player', [
-  function() {
+  '$http',
+
+  function($http) {
     players = [];
 
     return {
       all: function() {
-        var res;
+        if (players.length) return players;
 
-        if (players.length) {
-          res = players;
-        } else {
-          res = [
-            {
-              name: 'Joe Johnson',
-              position: 'QB'
-            }
-          ];
-        }
-
-        return res;
+        return $http.get('/data/players.json');
       }
     };
   }
