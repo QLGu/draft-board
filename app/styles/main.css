@@ -9,7 +9,19 @@ h2 {
   text-transform: uppercase;
 }
 
+th {
+  background: #384049;
+  color: #FFF;
+  font-weight: normal;
+  border: 0 !important;
+}
+
+.row {
+  margin: 0;
+}
+
 .queue {
+  background: #fff;
   overflow: scroll;
   position: fixed;
   top: 0;
@@ -36,7 +48,7 @@ h2 {
 }
 
 .queue .round-label {
-  background: #333;
+  background: #384049;
   color: #fff;
   border: 0;
   position: relative;
@@ -55,8 +67,22 @@ h2 {
   -webkit-transform: rotate(270deg);
 }
 
+.available-players-wrap {
+  border-right: 1px solid #ddd;
+}
+
 .available-players .rank {
   color: #999;
   text-align: center;
   width: 1%;
+}
+
+.available-players .pos {
+  width: 1%;
+}
+
+.draft-summary-wrap {
+  position: fixed;
+  top: 100px;
+  right: 0;
 }

@@ -31,22 +31,35 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-8">
+          <div class="col-xs-8 available-players-wrap">
             <h2>Available Players</h2>
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-pills">
               <li ng-repeat="position in positions"><a href="#" ng-click="filterPosition(position)">{{ position }}</a></li>
             </ul>
             <table class="table available-players">
+              <tr>
+                <th>Rank</th>
+                <th>Position</th>
+                <th>Player</th>
+                <th>School</th>
+                <th>Class</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th></th>
+              </tr>
               <tr ng-repeat="player in players">
                 <td class="rank">{{ player.pos_rank }}</td>
                 <td class="pos">{{ player.pos }}</td>
-                <td class="name">{{ player.name }}</td>
+                <td class="name"><a href="#">{{ player.name }}</a></td>
                 <td class="school">{{ player.school }}</td>
+                <td class="year">{{ player.year }}</td>
+                <td class="height">{{ player.height }}</td>
+                <td class="weight">{{ player.weight }}</td>
                 <td><button class="btn btn-success btn-xs">Draft</button>
               </tr>
             </table>
           </div>
-          <div class="col-xs-4">
+          <div class="col-xs-4 draft-summary-wrap">
             <h2>Draft Summary</h2>
           </div>
         </div>
