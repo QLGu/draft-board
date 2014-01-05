@@ -20,5 +20,17 @@ angular.module('app.controllers').controller('mainCtrl', [
         return el.pos == pos;
       });
     };
+
+    $scope.draftPlayer = function(rank) {
+      var index;
+
+      for (var i = 0, max = $scope.allPlayers.length; i < max; i++) {
+        if ($scope.allPlayers[i].rank == rank) {
+          index = i;
+        }
+      }
+
+      $scope.allPlayers[index].team = 'asdf';
+    };
   }
 ]);

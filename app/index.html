@@ -48,6 +48,7 @@
                 <th>Class</th>
                 <th>Height</th>
                 <th>Weight</th>
+                <th>Drafted by</th>
                 <th></th>
               </tr>
               <tr ng-repeat="player in players">
@@ -58,7 +59,11 @@
                 <td class="year">{{ player.year }}</td>
                 <td class="height">{{ player.height }}</td>
                 <td class="weight">{{ player.weight }}</td>
-                <td><button class="btn btn-success btn-xs">Draft</button>
+                <td class="drafted-by">{{ player.team }}</td>
+                <td>
+                  <button class="btn btn-success btn-xs" 
+                          ng-click="draftPlayer(player.rank)"
+                          ng-if="!player.team">Draft</button>
               </tr>
             </table>
           </div>
