@@ -25,7 +25,10 @@
           <div class="round" ng-repeat="round in rounds">
             <div class="round-label"><span>Round {{ round }}</span></div>
             <div class="team" ng-repeat="team in teams">
+              <!--
               {{ ($index + 1) + ($parent.$index * 30) }} {{ team.name }}
+              -->
+              <img src="http://i.nflcdn.com/static/site/5.19/img/teams/{{ team.abbr }}/{{ team.abbr }}_logo-80x90.gif">
             </div>
           </div>
         </div>

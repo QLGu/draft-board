@@ -19,9 +19,6 @@ angular.module('app.services').factory('Team', [
               name: 'St. Louis Rams',
               abbr: 'STL',
               order: 2,
-              from: {
-                1: 'WAS'
-              }
             },
             {
               name: 'Jacksonville Jaguars',

@@ -1,6 +1,6 @@
 body {
   font-family: 'proxima-nova', sans-serif;
-  padding-top: 100px;
+  padding-top: 90px;
 }
 
 h2 {
@@ -37,14 +37,12 @@ th {
 .queue .round-label,
 .queue .team {
   background: #f9f9f9;
-  border: 1px solid #ddd;
   display: inline-block;
-  height: 100px;
+  height: 90px;
   margin-left: -1px;
-  padding: 10px;
   text-align: center;
   vertical-align: top;
-  width: 200px;
+  width: 80px;
 }
 
 .queue .round-label {
