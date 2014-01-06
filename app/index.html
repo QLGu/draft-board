@@ -22,12 +22,9 @@
 
       <div ng-controller="mainCtrl">
         <div class="queue">
-          <div class="round" ng-repeat="round in rounds">
+          <div class="round" ng-repeat="round in rounds" ng-class="{hidden: $index + 1 < currentRound}">
             <div class="round-label"><span>Round {{ round }}</span></div>
-            <div class="team" ng-repeat="team in teams">
-              <!--
-              {{ ($index + 1) + ($parent.$index * 30) }} {{ team.name }}
-              -->
+            <div class="team" ng-repeat="team in teams" ng-class="{complete: madePick(team) && currentRound == $parent.$index + 1}">
               <img src="http://i.nflcdn.com/static/site/5.19/img/teams/{{ team.abbr }}/{{ team.abbr }}_logo-80x90.gif">
             </div>
           </div>
@@ -51,7 +48,7 @@
                 <th>Drafted by</th>
                 <th></th>
               </tr>
-              <tr ng-repeat="player in players">
+              <tr ng-repeat="player in players" ng-class="{dim: player.team}">
                 <td class="rank">{{ player.pos_rank }}</td>
                 <td class="pos">{{ player.pos }}</td>
                 <td class="name"><a href="#">{{ player.name }}</a></td>

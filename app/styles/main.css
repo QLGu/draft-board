@@ -4,9 +4,9 @@ body {
 }
 
 h2 {
-  font-weight: 700;
-  margin: 20px 10px;
-  text-transform: uppercase;
+  font-family: 'proxima-nova', sans-serif;
+  font-weight: normal;
+  margin: 40px 10px 20px;
 }
 
 th {
@@ -14,6 +14,10 @@ th {
   color: #FFF;
   font-weight: normal;
   border: 0 !important;
+}
+
+.dim {
+  opacity: 0.6;
 }
 
 .row {
@@ -41,8 +45,13 @@ th {
   height: 90px;
   margin-left: -1px;
   text-align: center;
+  transition: 1s;
   vertical-align: top;
   width: 80px;
+}
+
+.queue .team.complete {
+  width: 0;
 }
 
 .queue .round-label {
@@ -58,7 +67,7 @@ th {
   font-size: 12px;
   padding: 0;
   position: absolute;
-  bottom: 44px;
+  bottom: 39px;
   left: -4px;
   line-height: 1;
   text-transform: uppercase;

@@ -57,5 +57,9 @@ angular.module('app.controllers').controller('mainCtrl', [
         $scope.currentRound++;
       }
     };
+
+    $scope.madePick = function(team) {
+      return typeof team.rounds !== 'undefined' && team.rounds.indexOf($scope.currentRound) !== -1;
+    };
   }
 ]);
