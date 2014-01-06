@@ -66,6 +66,22 @@
           </div>
           <div class="col-xs-4 draft-summary-wrap">
             <h2>Draft Summary</h2>
+            <div class="form-group">
+              <label>Team</label>
+              <select class="" ng-options="team.name as team.name for team in teams" ng-model="summaryTeam"></select>
+            </div>
+            <table class="table">
+              <tr>
+                <th>Round</th>
+                <th>Pick</th>
+                <th>Player</th>
+              </tr>
+              <tr ng-repeat="player in summaryByTeam()">
+                <td>{{ player.round }}</td>
+                <td>{{ player.pick }}</td>
+                <td>{{ player.name }}</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>

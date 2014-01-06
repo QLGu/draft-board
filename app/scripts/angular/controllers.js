@@ -10,10 +10,12 @@ angular.module('app.controllers').controller('mainCtrl', [
     $scope.currentRound = 1;
     $scope.positions = ['QB', 'RB', 'FB', 'WR', 'TE', 'OT', 'OG', 'C', 'DE', 'DT', 'ILB', 'OLB', 'CB', 'FS', 'SS'];
     $scope.picksMade = 0;
+    $scope.allPlayers = [];
 
     Team.all().success(function(data) {
       $scope.teams = data;
       $scope.currentTeam = $scope.teams[0].name;
+      $scope.summaryTeam = $scope.teams[0].name;
     });
 
     Player.all().success(function(data) {
@@ -51,7 +53,9 @@ angular.module('app.controllers').controller('mainCtrl', [
       }
 
       $scope.allPlayers[index].team = $scope.currentTeam.name;
+      $scope.allPlayers[index].round = $scope.currentRound;
       $scope.picksMade++;
+      $scope.allPlayers[index].pick = $scope.picksMade;
 
       if ($scope.picksMade % $scope.teams.length === 0) {
         $scope.currentRound++;
@@ -60,6 +64,12 @@ angular.module('app.controllers').controller('mainCtrl', [
 
     $scope.madePick = function(team) {
       return typeof team.rounds !== 'undefined' && team.rounds.indexOf($scope.currentRound) !== -1;
+    };
+
+    $scope.summaryByTeam = function() {
+      return $scope.allPlayers.filter(function(el) {
+        return el.team == $scope.summaryTeam;
+      });
     };
   }
 ]);
