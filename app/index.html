@@ -74,12 +74,16 @@
               <tr>
                 <th>Round</th>
                 <th>Pick</th>
+                <th>Position</th>
                 <th>Player</th>
+                <th>School</th>
               </tr>
               <tr ng-repeat="player in summaryByTeam()">
                 <td>{{ player.round }}</td>
                 <td>{{ player.pick }}</td>
+                <td>{{ player.pos }}</td>
                 <td>{{ player.name }}</td>
+                <td>{{ player.school }}</td>
               </tr>
             </table>
           </div>
