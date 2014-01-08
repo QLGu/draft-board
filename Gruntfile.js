@@ -230,6 +230,16 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
+            data: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '<%= yeoman.dist %>',
+                    src: [
+                        '*/*.json'
+                    ]
+                }]
+            },
             styles: {
                 expand: true,
                 dot: true,
@@ -290,6 +300,7 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
+        'copy:data',
         'rev',
         'usemin'
     ]);

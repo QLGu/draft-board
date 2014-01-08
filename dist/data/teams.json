@@ -1,0 +1,22 @@
+[
+  { "name": "Texans", "abbr": "HOU", "order": "1" },
+  { "name": "Rams", "abbr": "STL", "order": "2" },
+  { "name": "Jaguars", "abbr": "JAX", "order": "3" },
+  { "name": "Browns", "abbr": "CLE", "order": "4" },
+  { "name": "Raiders", "abbr": "OAK", "order": "5" },
+  { "name": "Falcons", "abbr": "ATL", "order": "6" },
+  { "name": "Buccaneers", "abbr": "TB", "order": "7" },
+  { "name": "Vikings", "abbr": "MIN", "order": "8" },
+  { "name": "Bills", "abbr": "BUF", "order": "9" },
+  { "name": "Lions", "abbr": "DET", "order": "10" },
+  { "name": "Titans", "abbr": "TEN", "order": "11" },
+  { "name": "Giants", "abbr": "NYG", "order": "12" },
+  { "name": "Rams", "abbr": "STL", "order": "13" },
+  { "name": "Bears", "abbr": "CHI", "order": "14" },
+  { "name": "Steelers", "abbr": "PIT", "order": "15" },
+  { "name": "Ravens", "abbr": "BAL", "order": "16" },
+  { "name": "Cowboys", "abbr": "DAL", "order": "17" },
+  { "name": "Jets", "abbr": "NYJ", "order": "18" },
+  { "name": "Dolphins", "abbr": "MIA", "order": "19" },
+  { "name": "Cardinals", "abbr": "ARI", "order": "20" }
+]
