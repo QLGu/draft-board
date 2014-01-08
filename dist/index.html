@@ -1,0 +1,95 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>draft</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/dabe48d3.main.css"/>
+    </head>
+    <body ng-app="app">
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div ng-controller="mainCtrl">
+        <div class="queue">
+          <div class="round" ng-repeat="round in rounds" ng-class="{hidden: $index + 1 < currentRound}">
+            <div class="round-label"><span>Round {{ round }}</span></div>
+            <div class="team" ng-repeat="team in teams" ng-class="{complete: madePick(team) && currentRound == $parent.$index + 1}">
+              <img src="http://i.nflcdn.com/static/site/5.19/img/teams/{{ team.abbr }}/{{ team.abbr }}_logo-80x90.gif">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8 available-players-wrap">
+            <h2>Available Players</h2>
+            <ul class="nav nav-pills">
+              <li ng-repeat="position in positions"><a href="#" ng-click="filterPosition(position)">{{ position }}</a></li>
+            </ul>
+            <table class="table available-players">
+              <tr>
+                <th>Rank</th>
+                <th>Position</th>
+                <th>Player</th>
+                <th>School</th>
+                <th>Class</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Drafted by</th>
+                <th></th>
+              </tr>
+              <tr ng-repeat="player in players" ng-class="{dim: player.team}">
+                <td class="rank">{{ player.pos_rank }}</td>
+                <td class="pos">{{ player.pos }}</td>
+                <td class="name"><a href="#">{{ player.name }}</a></td>
+                <td class="school">{{ player.school }}</td>
+                <td class="year">{{ player.year }}</td>
+                <td class="height">{{ player.height }}</td>
+                <td class="weight">{{ player.weight }}</td>
+                <td class="drafted-by">{{ player.team }}</td>
+                <td>
+                  <button class="btn btn-success btn-xs" ng-click="draftPlayer(player.rank)" ng-if="!player.team">Draft</button>
+              </td></tr>
+            </table>
+          </div>
+          <div class="col-xs-4 draft-summary-wrap">
+            <h2>Draft Summary</h2>
+            <div class="form-group">
+              <label>Team</label>
+              <select class="" ng-options="team.name as team.name for team in teams" ng-model="summaryTeam"></select>
+            </div>
+            <table class="table">
+              <tr>
+                <th>Round</th>
+                <th>Pick</th>
+                <th>Position</th>
+                <th>Player</th>
+                <th>School</th>
+              </tr>
+              <tr ng-repeat="player in summaryByTeam()">
+                <td>{{ player.round }}</td>
+                <td>{{ player.pick }}</td>
+                <td>{{ player.pos }}</td>
+                <td>{{ player.name }}</td>
+                <td>{{ player.school }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="//use.typekit.net/jkw0vhm.js"></script>
+      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+      <script src="scripts/186df21d.vendor.js"></script>
+
+      <script src="scripts/048a443d.main.js"></script>
+</body>
+</html>
