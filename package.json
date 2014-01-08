@@ -1,5 +1,5 @@
 {
-  "name": "draft",
+  "name": "draft-board",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -28,5 +28,22 @@
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "description": "Sample Node/Angular application to track NFL draft",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tylerrash/draft-board.git"
+  },
+  "author": "Tyler Rash",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tylerrash/draft-board/issues"
   }
 }
